@@ -4720,6 +4720,35 @@ li {
   text-decoration: none;
 }
 
+.team-section {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team-member {
+  width: 200px;
+  margin: 20px;
+  text-align: left;
+}
+
+.team-member-photo img {
+  width: 100%;
+}
+
+.team-member h3 {
+  margin: 10px 0;
+}
+
+.team-member p {
+  margin: 5px 0;
+}
+
 .post-title {
   font-family: "Mulish", sans-serif;
   font-size: 1.5625rem;

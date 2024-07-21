@@ -225,7 +225,102 @@ function esgi_customize_register($wp_customize)
             'settings' => $partner_logo_setting,
         )));
     }
+
+    function customize_register($wp_customize) {
+        // Ajouter une section pour les membres de l'équipe
+        $wp_customize->add_section('team_section', array(
+            'title' => __('Team', 'yourtheme'),
+            'priority' => 30,
+        ));
+    
+        // Ajouter un paramètre pour le nombre de membres de l'équipe
+        $wp_customize->add_setting('number_of_team_members', array(
+            'default' => 4,
+            'sanitize_callback' => 'absint',
+        ));
+    
+        // Ajouter un contrôle pour le nombre de membres de l'équipe
+        $wp_customize->add_control('number_of_team_members', array(
+            'label' => __('Number of Team Members', 'yourtheme'),
+            'section' => 'team_section',
+            'type' => 'number',
+            'input_attrs' => array(
+                'min' => 1,
+                'max' => 20,
+                'step' => 1,
+            ),
+        ));
+    
+        // Définir un nombre maximum de membres de l'équipe, par exemple 20
+        $max_team_members = 15;
+    
+        // Boucle pour ajouter des paramètres et des contrôles pour chaque membre de l'équipe
+        for ($i = 1; $i <= $max_team_members; $i++) {
+            $wp_customize->add_setting("team_member_{$i}_name", array('default' => '', 'sanitize_callback' => 'sanitize_text_field'));
+            $wp_customize->add_control("team_member_{$i}_name", array(
+                'label' => __("Team Member {$i} Name", 'yourtheme'),
+                'section' => 'team_section',
+                'type' => 'text',
+                'active_callback' => function() use ($i) {
+                    $number_of_team_members = get_theme_mod('number_of_team_members', 4);
+                    return $i <= $number_of_team_members;
+                },
+            ));
+    
+            $wp_customize->add_setting("team_member_{$i}_role", array('default' => '', 'sanitize_callback' => 'sanitize_text_field'));
+            $wp_customize->add_control("team_member_{$i}_role", array(
+                'label' => __("Team Member {$i} Role", 'yourtheme'),
+                'section' => 'team_section',
+                'type' => 'text',
+                'active_callback' => function() use ($i) {
+                    $number_of_team_members = get_theme_mod('number_of_team_members', 4);
+                    return $i <= $number_of_team_members;
+                },
+            ));
+    
+            $wp_customize->add_setting("team_member_{$i}_phone", array('default' => '', 'sanitize_callback' => 'sanitize_text_field'));
+            $wp_customize->add_control("team_member_{$i}_phone", array(
+                'label' => __("Team Member {$i} Phone", 'yourtheme'),
+                'section' => 'team_section',
+                'type' => 'text',
+                'active_callback' => function() use ($i) {
+                    $number_of_team_members = get_theme_mod('number_of_team_members', 4);
+                    return $i <= $number_of_team_members;
+                },
+            ));
+    
+            $wp_customize->add_setting("team_member_{$i}_email", array('default' => '', 'sanitize_callback' => 'sanitize_email'));
+            $wp_customize->add_control("team_member_{$i}_email", array(
+                'label' => __("Team Member {$i} Email", 'yourtheme'),
+                'section' => 'team_section',
+                'type' => 'email',
+                'active_callback' => function() use ($i) {
+                    $number_of_team_members = get_theme_mod('number_of_team_members', 4);
+                    return $i <= $number_of_team_members;
+                },
+            ));
+    
+            $wp_customize->add_setting("team_member_{$i}_photo", array('default' => '', 'sanitize_callback' => 'esc_url_raw'));
+            $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "team_member_{$i}_photo", array(
+                'label' => __("Team Member {$i} Photo", 'yourtheme'),
+                'section' => 'team_section',
+                'settings' => "team_member_{$i}_photo",
+                'active_callback' => function() use ($i) {
+                    $number_of_team_members = get_theme_mod('number_of_team_members', 4);
+                    return $i <= $number_of_team_members;
+                },
+            )));
+        }
+    }
+
 }
+add_action('customize_register', 'customize_register');
+
+function theme_customizer_js() {
+    wp_enqueue_script('customizer-js','/assets/our-team.js', array('jquery', 'customize-controls'), false, true);
+}
+
+add_action('customize_controls_enqueue_scripts', 'theme_customizer_js');
 
 function esgi_bool_sanitize($value)
 {
