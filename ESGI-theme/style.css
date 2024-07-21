@@ -4847,12 +4847,6 @@ li {
   align-items: center;
 }
 
-.search-results {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .partners {
   margin-inline: 10rem;
 }
