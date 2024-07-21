@@ -5122,8 +5122,8 @@ main .who {
 main .who .who-details {
   margin-left: 6.25rem;
 }
-main .our-services, main .our-partners {
-  margin: 6.25rem 0 3.75rem 0;
+main .our-services h2, main .our-partners h2 {
+  margin: 6.25rem 0 3.75rem 6.25rem;
 }
 
 /*# sourceMappingURL=style.css.map */

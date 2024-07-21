@@ -61,10 +61,8 @@ main {
         }
     }
 
-    .our-services, .our-partners {
-       margin: rem(100) 0 rem(60) 0;
+    .our-services h2, .our-partners h2 {
+       margin: rem(100) 0 rem(60) rem(100);
     }
-    
-    
+       
 }
-
