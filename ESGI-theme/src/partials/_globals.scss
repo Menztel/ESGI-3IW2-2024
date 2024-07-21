@@ -8,7 +8,15 @@
 	--text-color: var(--black);
 }
 
+html, body {
+	height: 100%;
+  	margin: 0;
+}
+
 body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 	font-family: $font2;
 	background-color: var(--bg-color);
 	color: var(--text-color);
@@ -18,9 +26,23 @@ body {
 	}
 }
 
+main {
+	flex: 1;
+}
+
+h1,h2,h3,h4 {
+	margin: 0;
+}
+
 img {
 	max-width: 100%;
 	height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
 }
 
 svg {
@@ -32,4 +54,8 @@ svg {
 			fill: var(--main-color);
 		}
 	}
+}
+
+li {
+	@include resetList;
 }

@@ -1,8 +1,35 @@
 #site-footer {
+	width: 100%;
 	display: flex;
 	text-align: center;
 	margin-top: rem(120);
-	padding: rem(40) 0;
+	padding: rem(40) rem(160);
+	background-color: #050A3A;
+	color: #ffff;
+	font-family: $font1;
+	
+	.box {
+		width: 100%;
+		@include flexbox(row, nowrap, space-between, center, 0);
+		div {
+			@include flexbox(column, nowrap, space-between, flex-start, #{rem(50)});
+		}
+		div:nth-child(2) {
+			align-items: flex-end;
+			section {
+				@include flexbox(row, nowrap, space-between, center, #{rem(94)});
+				article {
+					text-align: right;
+					p {
+						font-weight: 100;
+					}
+				}
+			}
+			.social-links {
+				@include flexbox(row, nowrap, center, center, #{rem(20)});
+			}
+		}
+	}
 }
 
 .social-link {

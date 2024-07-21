@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php 
+/*
+    Template Name: Custom Modèle
+*/
+    get_header(); 
+?>
 
 <main id="site-content">
     <div class="container">

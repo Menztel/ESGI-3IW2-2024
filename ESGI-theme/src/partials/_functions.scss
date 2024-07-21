@@ -2,6 +2,10 @@
 	@return calc($pxVal / 16) * 1rem;
 }
 
+@mixin columnOffset {
+	margin-inline: rem(160);
+}
+
 @mixin resetList {
 	list-style: none;
 	margin: 0;
@@ -9,7 +13,6 @@
 }
 
 @mixin resetLink {
-	color: inherit;
 	text-decoration: none;
 }
 

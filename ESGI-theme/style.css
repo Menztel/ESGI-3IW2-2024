@@ -23,8 +23,7 @@ Document
 /**
 Use a better box model (opinionated).
 */
-@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 *,
 ::before,
 ::after {
@@ -4484,8 +4483,16 @@ summary {
   --text-color: var(--black);
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
-  font-family: "Source Serif 4", serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Mulish", serif;
   background-color: var(--bg-color);
   color: var(--text-color);
 }
@@ -4494,9 +4501,23 @@ body.dark {
   --text-color: var(--white);
 }
 
+main {
+  flex: 1;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
 img {
   max-width: 100%;
   height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
 }
 
 svg path {
@@ -4506,48 +4527,130 @@ svg:hover path {
   fill: var(--main-color);
 }
 
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 #site-header {
-  font-family: "Overpass", sans-serif;
+  padding: 1rem 10rem;
+  font-family: "Mulish", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   letter-spacing: 0.1em;
   font-weight: 400;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin: 3rem 0;
 }
-#site-header .main-menu ul {
+#site-header > ul {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 2.8125rem;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#site-header > ul li:nth-child(1) a svg {
+  display: block;
+  width: 6.875rem;
+  height: 6.875rem;
+}
+#site-header > ul li:nth-child(3) {
+  display: none;
+}
+#site-header .main-menu {
+  display: none;
+  justify-content: flex-end;
+}
+#site-header .main-menu ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.625rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 #site-header .main-menu ul li a {
   display: block;
-  padding: 0.5em;
-  color: inherit;
+  color: #FFF;
+  font-family: "Mulish", sans-serif;
+  font-size: 4.375rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
   text-decoration: none;
 }
-#site-header .main-menu ul li:hover a, #site-header .main-menu ul li.current-menu-item a, #site-header .main-menu ul li.current_page_parent a {
-  background-color: #000;
-  color: var(--white);
+.logo-white {
+  filter: invert(100%);
 }
 
+@media (max-width: 768px) {
+  #site-header {
+    padding: 1rem 5rem;
+  }
+  #site-header .main-menu ul li a {
+    font-size: 2.5rem;
+  }
+}
 #site-footer {
+  width: 100%;
   display: flex;
   text-align: center;
   margin-top: 7.5rem;
-  padding: 2.5rem 0;
+  padding: 2.5rem 10rem;
+  background-color: #050A3A;
+  color: white;
+  font-family: "Mulish", sans-serif;
+}
+#site-footer .box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+#site-footer .box div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3.125rem;
+}
+#site-footer .box div:nth-child(2) {
+  align-items: flex-end;
+}
+#site-footer .box div:nth-child(2) section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5.875rem;
+}
+#site-footer .box div:nth-child(2) section article {
+  text-align: right;
+}
+#site-footer .box div:nth-child(2) section article p {
+  font-weight: 100;
+}
+#site-footer .box div:nth-child(2) .social-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
 }
 
 .social-link {
-  color: inherit;
   text-decoration: none;
 }
 
@@ -4569,14 +4672,14 @@ svg:hover path {
   object-position: center;
 }
 .identityCard h1 {
-  font-family: "Overpass", sans-serif;
+  font-family: "Mulish", sans-serif;
   font-size: 1.5625rem;
   line-height: 1.2;
   letter-spacing: 0.1em;
   font-weight: 400;
 }
 .identityCard h2 {
-  font-family: "Source Serif 4", serif;
+  font-family: "Mulish", serif;
   font-size: 1rem;
   line-height: 1.6875rem;
   letter-spacing: 0.03em;
@@ -4598,12 +4701,11 @@ svg:hover path {
   gap: 1.5625rem;
 }
 .identityCard ul a {
-  color: inherit;
   text-decoration: none;
 }
 
 .post-title {
-  font-family: "Overpass", sans-serif;
+  font-family: "Mulish", sans-serif;
   font-size: 1.5625rem;
   line-height: 1.2;
   letter-spacing: 0.1em;
@@ -4613,7 +4715,7 @@ svg:hover path {
 }
 
 .post-content {
-  font-family: "Source Serif 4", serif;
+  font-family: "Mulish", serif;
   font-size: 1rem;
   line-height: 1.6875rem;
   letter-spacing: 0.03em;
@@ -4621,7 +4723,7 @@ svg:hover path {
 }
 
 .post-meta {
-  font-family: "Source Serif 4", serif;
+  font-family: "Mulish", serif;
   font-size: 0.8125rem;
   line-height: 1.3125rem;
   letter-spacing: 0.05em;
@@ -4668,9 +4770,8 @@ svg:hover path {
   margin-bottom: 1.25rem;
 }
 .postsList li a {
-  color: inherit;
   text-decoration: none;
-  font-family: "Overpass", sans-serif;
+  font-family: "Mulish", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   letter-spacing: 0.1em;
@@ -4683,7 +4784,7 @@ svg:hover path {
   gap: 1.25rem;
 }
 .postsList li a time {
-  font-family: "Source Serif 4", serif;
+  font-family: "Mulish", serif;
   font-size: 0.8125rem;
   line-height: 1.3125rem;
   letter-spacing: 0.05em;
@@ -4705,6 +4806,114 @@ svg:hover path {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.partners {
+  margin-inline: 10rem;
+}
+.partners h1 {
+  color: #050A3A;
+  font-family: Mulish;
+  font-size: 5.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.partners-list {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 7.4375rem;
+}
+
+.partner {
+  width: 200px;
+  max-height: 150px;
+  overflow: auto;
+}
+
+.partner img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .partners-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+.services-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: normal;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+.services-container .service-item {
+  position: relative;
+}
+.services-container .service-item img {
+  width: 480px;
+  height: 480px;
+  object-fit: fill;
+}
+.services-container .service-item .service-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 480px;
+  margin: 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.services-container .service-item .service-text h2 {
+  position: relative;
+  color: #000;
+  font-family: "Mulish", sans-serif;
+  font-size: 2.1875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: none;
+}
+.services-container .service-item .service-text h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #FFD0A8 0%, #FF4FC0 100%);
+  display: block;
+}
+.services-container .service-item:hover .service-text {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .services-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

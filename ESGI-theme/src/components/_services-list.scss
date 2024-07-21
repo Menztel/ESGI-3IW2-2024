@@ -1,0 +1,62 @@
+.services-container {
+  @include flexbox(row, nowrap, normal, center, 0);
+  width: 100%;
+
+  .service-item {
+    position: relative;
+
+    img {
+      width: 480px;
+      height: 480px;
+      object-fit: fill;
+    }
+
+    .service-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 480px;
+      margin: 0;
+      background-color: #ffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+
+      h2 {
+        position: relative;
+        color: #000;
+        font-family: $font1;
+        font-size: rem(35);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        // Suppression de text-decoration et ajout de pseudo-élément pour le gradient
+        text-decoration: none;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px; // Ajustez cette valeur pour contrôler la distance de la sous-ligne par rapport au texte
+            left: 0;
+            width: 100%;
+            height: 2px; // Épaisseur de la sous-ligne
+            background: linear-gradient(90deg, #FFD0A8 0%, #FF4FC0 100%);
+            display: block;
+        }
+      }
+    }
+
+    &:hover {
+      .service-text {
+        opacity: 1;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    @include flexbox(column, nowrap, center, center, 0); // Ajuster l'espace pour les petits écrans
+  }
+}

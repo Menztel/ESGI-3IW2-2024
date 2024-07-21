@@ -7,18 +7,27 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
-    <header id="site-header">
-        <div class="container">
-            <?php
-            if (has_nav_menu('primary_menu')) {
-                wp_nav_menu([
-                    'menu' => 'primary_menu',
-                    'container' => 'nav',
-                    'container_class' => 'main-menu'
-                ]);
-            }
-            ?>
-        </div>
-    </header>
+<header id="site-header">
+    <ul>
+        <li>
+            <a href="#"><?= esgi_getIcon('logo') ?></a>
+        </li>
+        <li>
+            <a href="#"><?= esgi_getIcon('menu') ?></a>
+        </li>
+        <li>
+            <a href="#"><?= esgi_getIcon('closeMenu') ?></a>
+        </li>
+    </ul>
+    <div>
+        <?php
+        if (has_nav_menu('primary_menu')) {
+            wp_nav_menu([
+                'menu' => 'primary_menu',
+                'container' => 'nav',
+                'container_class' => 'main-menu'
+            ]);
+        }
+        ?>
+    </div>
+</header>
