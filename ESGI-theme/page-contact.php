@@ -3,6 +3,7 @@
 Template Name: Contact
 */
 get_header(); ?>
-<h1><?php the_title(); ?>.</h1>
-
+<main id="site-content">
+    <h1><?php the_title(); ?>.</h1>
+</main>
 <?php get_footer(); ?>
