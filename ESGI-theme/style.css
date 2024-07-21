@@ -4561,6 +4561,7 @@ li {
   display: none;
 }
 #site-header .main-menu {
+  padding-bottom: 2rem;
   display: none;
   justify-content: flex-end;
 }
@@ -4583,8 +4584,23 @@ li {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  position: relative;
   text-decoration: none;
 }
+#site-header .main-menu ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FFD0A8 0%, #FF4FC0 100%);
+  transition: width 0.3s ease;
+}
+#site-header .main-menu ul li a:hover::after {
+  width: 100%;
+}
+
 .logo-white {
   filter: invert(100%);
 }
@@ -4833,7 +4849,6 @@ li {
 .partner {
   width: 200px;
   max-height: 150px;
-  overflow: auto;
 }
 
 .partner img {
@@ -4913,6 +4928,148 @@ li {
     justify-content: center;
     align-items: center;
     gap: 0;
+  }
+}
+
+.blog-content {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+.blog-content .search-bar input[type=search] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+.blog-content .recent-posts,
+.blog-content .post-categories,
+.blog-content .post-tags {
+  margin-bottom: 2rem;
+}
+.blog-content .recent-posts h2,
+.blog-content .post-categories h2,
+.blog-content .post-tags h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.blog-content .recent-posts .post-item,
+.blog-content .post-categories .post-item,
+.blog-content .post-tags .post-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.blog-content .recent-posts .post-item img,
+.blog-content .post-categories .post-item img,
+.blog-content .post-tags .post-item img {
+  width: 3.125rem;
+  height: 3.125rem;
+  margin-right: 1rem;
+  border-radius: 4px;
+}
+.blog-content .recent-posts .post-item h3,
+.blog-content .post-categories .post-item h3,
+.blog-content .post-tags .post-item h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+.blog-content .recent-posts .post-item p,
+.blog-content .post-categories .post-item p,
+.blog-content .post-tags .post-item p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: gray;
+}
+.blog-content .post-categories ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.blog-content .post-categories ul li {
+  margin-bottom: 0.5rem;
+}
+.blog-content .post-categories ul li a {
+  color: #0073e6;
+  font-size: 1rem;
+}
+.blog-content .post-tags .tag-cloud-link {
+  display: inline-block;
+  margin: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #000080;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.blog-content .post-tags .tag-cloud-link:hover {
+  background-color: #005ab3;
+}
+.blog-content .all-posts .post {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1), 10px, 0;
+}
+.blog-content .all-posts .post img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.blog-content .all-posts .post h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+.blog-content .all-posts .post p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.blog-content .all-posts .pagination {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.blog-content .all-posts .pagination a {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #000080;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.blog-content .all-posts .pagination a:hover {
+  background-color: #005ab3;
+}
+.blog-content .all-posts .pagination .current {
+  background-color: #00004d;
+}
+
+@media (max-width: 768px) {
+  .blog-content {
+    grid-template-columns: 1fr;
+  }
+  .blog-content .recent-posts h2,
+  .blog-content .post-categories h2,
+  .blog-content .post-tags h2 {
+    text-align: center;
+  }
+  .blog-content .all-posts .post h2 {
+    font-size: 1.25rem;
+  }
+  .blog-content .all-posts .post p {
+    font-size: 0.875rem;
+  }
+  .blog-content .all-posts .pagination {
+    flex-direction: column;
+  }
+  .blog-content .all-posts .pagination a {
+    margin-bottom: 0.5rem;
   }
 }
 

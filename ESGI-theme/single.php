@@ -1,33 +1,48 @@
-<?php get_header(); ?>
-
-<main id="site-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-6 offset-3">
-                <h1 class="post-title"><?= the_title() ?></h1>
-                <div class="post-meta">
-                    <div class="post-author">
-                        <?= get_avatar($post->post_author) ?>
-                        <?= get_the_author_meta('nickname', $post->post_author) ?>
-                    </div>
-                    <div class="post-date">
-                        <time><?= wp_date('j F Y', strtotime($post->post_date))  ?></time>
-                    </div>
-                </div>
-                <div class="post-content">
-                    <div class="post-thumbnail">
-                        <?= get_the_post_thumbnail($post, 'large'); ?>
-                    </div>
-                    <?= the_content() ?>
-                </div>
-            </div>
-            <?php
-            if (get_theme_mod('has_sidebar')) {
-                get_sidebar();
-            }
-            ?>
-        </div>
-    </div>
-</main>
-
+<?php
+/**
+ * The template for displaying all single posts and attachments
+ *
+ * @package WordPress
+ * @subpackage Twenty_Fifteen
+ * @since Twenty Fifteen 1.0
+ */
+ 
+get_header(); ?>
+ 
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+ 
+        <?php
+        // Start the loop.
+        while ( have_posts() ) : the_post();
+ 
+            /*
+             * Include the post format-specific template for the content. If you want to
+             * use this in a child theme, then include a file called called content-___.php
+             * (where ___ is the post format) and that will be used instead.
+             */
+            get_template_part( 'content', get_post_format() );
+ 
+            // If comments are open or we have at least one comment, load up the comment template.
+            if ( comments_open() || get_comments_number() ) :
+                comments_template();
+            endif;
+ 
+            // Previous/next post navigation.
+            the_post_navigation( array(
+                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'twentyfifteen' ) . '</span> ' .
+                    '<span class="screen-reader-text">' . __( 'Next post:', 'twentyfifteen' ) . '</span> ' .
+                    '<span class="post-title">%title</span>',
+                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentyfifteen' ) . '</span> ' .
+                    '<span class="screen-reader-text">' . __( 'Previous post:', 'twentyfifteen' ) . '</span> ' .
+                    '<span class="post-title">%title</span>',
+            ) );
+ 
+        // End the loop.
+        endwhile;
+        ?>
+ 
+        </main><!-- .site-main -->
+    </div><!-- .content-area -->
+ 
 <?php get_footer(); ?>

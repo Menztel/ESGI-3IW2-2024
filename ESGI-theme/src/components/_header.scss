@@ -1,66 +1,77 @@
 #site-header {
-	padding: 1rem rem(160);
-	@include heading3;
-	> ul {
-		@include flexbox(row, nowrap, space-between, center, 0);
-		@include resetList;
-		li:nth-child(1) {
-			a {
-				svg {
-					display: block;
-					width: rem(110);
-					height: rem(110);
-				}
-			}
-		}
-		li:nth-child(3) {
-			display: none;
-		}
-	}
-	.main-menu {
-		display: none;
-		justify-content: flex-end;
-		ul {
-			@include flexbox(column, nowrap, center, flex-end, #{rem(10)});
-			@include resetList;
-			li {
-				a {
-					display: block;
-					color: #FFF;
-					font-family: $font1;
-					font-size: rem(70);
-					font-style: normal;
-					font-weight: 600;
-					line-height: normal;
-					@include resetLink;
-				}
-				&:hover,
-				&.current-menu-item,
-				&.current_page_parent {
-					a {
-					}
-				}
-			}
-		}
-	}
+    padding: 1rem rem(160);
+    @include heading3;
+    > ul {
+        @include flexbox(row, nowrap, space-between, center, 0);
+        @include resetList;
+        li:nth-child(1) {
+            a {
+                svg {
+                    display: block;
+                    width: rem(110);
+                    height: rem(110);
+                }
+            }
+        }
+        li:nth-child(3) {
+            display: none;
+        }
+    }
+    .main-menu {
+		padding-bottom: 2rem;
+        display: none;
+        justify-content: flex-end;
+        ul {
+            @include flexbox(column, nowrap, center, flex-end, #{rem(10)});
+            @include resetList;
+            li {
+                a {
+                    display: block;
+                    color: #FFF;
+                    font-family: $font1;
+                    font-size: rem(70);
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    position: relative; // Ajouté pour le positionnement de la ligne
+                    @include resetLink;
+                    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: -5px;
+                        width: 0;
+                        height: 3px;
+                        background: linear-gradient(90deg, #FFD0A8 0%, #FF4FC0 100%);
+                        transition: width 0.3s ease;
+                    }
+                    
+                    &:hover::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .logo-white  {
-	filter: invert(100%);
+    filter: invert(100%);
 }
 
 @media (max-width: 768px) {
-	#site-header {
-		padding: 1rem rem(80);
+    #site-header {
+        padding: 1rem rem(80);
 
-		.main-menu {
-			ul {
-				li {
-					a {
-						font-size: rem(40);
-					}
-				}
-			}
-		}
-	}
+        .main-menu {
+            ul {
+                li {
+                    a {
+                        font-size: rem(40);
+                    }
+                }
+            }
+        }
+    }
 }
