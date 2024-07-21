@@ -1,0 +1,24 @@
+# Fichiers système macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Dossiers de sauvegarde d'IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Fichiers de build
+build/
+dist/
+
+# Dossiers de dépendances
+node_modules/
+jspm_packages/
+
+# Fichiers de logs
+npm-debug.log*

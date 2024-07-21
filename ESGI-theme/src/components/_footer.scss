@@ -1,0 +1,10 @@
+#site-footer {
+	display: flex;
+	text-align: center;
+	margin-top: rem(120);
+	padding: rem(40) 0;
+}
+
+.social-link {
+	@include resetLink;
+}
