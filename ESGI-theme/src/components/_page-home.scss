@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+
+    h1,h2 {
+        font-family: $font2;
+        color: #050A3A;
+    }
+
+    h1 {
+        font-size: rem(50);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding-left: rem(162);
+    }
+
+    h2 {
+        font-size: rem(40);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    p {
+        color: #8A8A8A;
+        font-size: rem(20);
+        line-height: rem(46);
+        padding: rem(16) 0 rem(100) 0;
+    }
+    
+    .image-1 {
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: rem(121) 0 rem(100) 0;
+        
+
+        .png-1 {
+            width: rem(1220);
+            height: rem(500);
+        }
+    }
+
+    .about-us {
+        display: flex;
+        justify-content: center;
+    }
+
+    .who {
+        display: flex;
+        align-items: center;
+        
+        .who-details {
+            margin-left: rem(100);
+        }
+    }
+
+    .our-services, .our-partners {
+       margin: rem(100) 0 rem(60) 0;
+    }
+    
+    
+}
+

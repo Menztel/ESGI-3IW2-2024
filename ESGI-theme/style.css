@@ -5072,5 +5072,58 @@ li {
     margin-bottom: 0.5rem;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main h1, main h2 {
+  font-family: "Mulish", serif;
+  color: #050A3A;
+}
+main h1 {
+  font-size: 3.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding-left: 10.125rem;
+}
+main h2 {
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+main p {
+  color: #8A8A8A;
+  font-size: 1.25rem;
+  line-height: 2.875rem;
+  padding: 1rem 0 6.25rem 0;
+}
+main .image-1 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 7.5625rem 0 6.25rem 0;
+}
+main .image-1 .png-1 {
+  width: 76.25rem;
+  height: 31.25rem;
+}
+main .about-us {
+  display: flex;
+  justify-content: center;
+}
+main .who {
+  display: flex;
+  align-items: center;
+}
+main .who .who-details {
+  margin-left: 6.25rem;
+}
+main .our-services, main .our-partners {
+  margin: 6.25rem 0 3.75rem 0;
+}
 
 /*# sourceMappingURL=style.css.map */
