@@ -2,7 +2,8 @@
 get_header();
 ?>
 <div class="search-results">
-    <h1>Résultats de la recherche pour <?php echo get_search_query(); ?></h1>
+
+    <h1 class="title">Search results for: <?php echo get_search_query(); ?></h1>
 
     <?php
     $s = get_search_query();
@@ -49,22 +50,17 @@ get_header();
             echo '</ul>';
         }
         if ($posts_count > 0) {
-            echo '<h2>Articles : ' . $posts_count . ' article(s) trouvé(s)</h2><ul>';
+            echo '<div class="search-results-grid">';
             foreach ($posts as $post) {
-                echo '<li><a href="' . get_permalink($post->ID) . '">' . get_the_title($post->ID) . '</a></li>';
+                echo '<div class="search-card">';
+                echo '<h3><a href="' . get_permalink($post->ID) . '">' . get_the_title($post->ID) . '</a></h3>';
+                echo '<div class="category-date">' . get_the_category_list(', ') . ', ' . get_the_date() . '</div>';
+                echo '<div class="excerpt">' . get_the_excerpt() . '</div>';
+                echo '</div>';
             }
-            echo '</ul>';
+            echo '</div>';
         }
 
-        if ($pages_count > 0 && $posts_count == 0) {
-            echo '<p>Seules des pages ont été trouvées.</p>';
-        }
-        if ($pages_count == 0 && $posts_count > 0) {
-            echo '<p>Seuls des articles ont été trouvés.</p>';
-        }
-        if ($pages_count == 0 && $posts_count == 0) {
-            echo '<p>Aucun article ou page trouvé pour votre recherche.</p>';
-        }
     endif;
     wp_reset_postdata();
     ?>

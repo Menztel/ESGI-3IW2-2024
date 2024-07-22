@@ -1,0 +1,52 @@
+<<<<<<< Updated upstream
+=======
+.search-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 9rem;
+
+    .title {
+        width: 96%;
+        font-size: rem(36);
+    }
+
+    .search-results-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .search-card {
+        padding: 20px;
+        flex: 1 1 calc(33.333% - 40px);
+        box-sizing: border-box;
+    }
+
+    .search-card h3 {
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+
+    .search-card h3 a {
+        text-decoration: none;
+    }
+
+    .search-card h3 a:hover {
+        text-decoration: underline;
+    }
+
+    .category-date {
+        font-size: 0.9rem;
+        color: $color-text;
+        margin: 10px 0;
+    }
+
+    .excerpt {
+        font-size: 1rem;
+        color: $color-text;
+    }
+
+}
+>>>>>>> Stashed changes
