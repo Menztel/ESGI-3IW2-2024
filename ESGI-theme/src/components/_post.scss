@@ -8,11 +8,6 @@
 	@include heading4;
 }
 
-.post-meta {
-	@include heading6;
-	@include flexbox(row, nowrap, center, center, #{rem(50)});
-	margin: rem(45) 0;
-}
 
 .post-author {
 	@include flexbox(row, nowrap, flex-start, center, #{rem(12)});

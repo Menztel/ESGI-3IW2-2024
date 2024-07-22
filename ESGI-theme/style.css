@@ -4505,6 +4505,10 @@ main {
   flex: 1;
 }
 
+.main-layout {
+  padding: 0 10rem;
+}
+
 h1, h2, h3, h4 {
   margin: 0;
 }
@@ -4775,21 +4779,6 @@ li {
   font-weight: 400;
 }
 
-.post-meta {
-  font-family: "Mulish", serif;
-  font-size: 0.8125rem;
-  line-height: 1.3125rem;
-  letter-spacing: 0.05em;
-  font-weight: 300;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 3.125rem;
-  margin: 2.8125rem 0;
-}
-
 .post-author {
   display: flex;
   flex-direction: row;
@@ -4848,11 +4837,44 @@ li {
   color: var(--main-color);
 }
 
-.page-404 {
+.error-404 {
+  text-align: center;
+}
+.error-404 h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.error-404 p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.error-404 .search-form-404 {
+  margin: 2rem 0;
+}
+.error-404 .search-form-404 input[type=search] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 25rem;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  color: #ffffff;
+}
+.error-404 .contact-info {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  gap: 2rem;
+}
+.error-404 .contact-info .contact-manager h3,
+.error-404 .contact-info .contact-ceo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.error-404 .contact-info .contact-manager p,
+.error-404 .contact-info .contact-ceo p {
+  font-size: 1rem;
+  margin: 0.25rem 0;
 }
 
 .partners {
@@ -4968,64 +4990,56 @@ li {
   gap: 2rem;
   padding: 2rem;
 }
-.blog-content .search-bar input[type=search] {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #333;
-  border-radius: 4px;
+.blog-content .sidebar {
+  padding: 1rem;
 }
-.blog-content .recent-posts,
-.blog-content .post-categories,
-.blog-content .post-tags {
+.blog-content .sidebar .search-bar,
+.blog-content .sidebar .recent-posts,
+.blog-content .sidebar .archives,
+.blog-content .sidebar .categories,
+.blog-content .sidebar .tags {
   margin-bottom: 2rem;
 }
-.blog-content .recent-posts h2,
-.blog-content .post-categories h2,
-.blog-content .post-tags h2 {
+.blog-content .sidebar .search-bar h2,
+.blog-content .sidebar .recent-posts h2,
+.blog-content .sidebar .archives h2,
+.blog-content .sidebar .categories h2,
+.blog-content .sidebar .tags h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-.blog-content .recent-posts .post-item,
-.blog-content .post-categories .post-item,
-.blog-content .post-tags .post-item {
+.blog-content .sidebar .post-item {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
 }
-.blog-content .recent-posts .post-item img,
-.blog-content .post-categories .post-item img,
-.blog-content .post-tags .post-item img {
+.blog-content .sidebar .post-item img {
   width: 3.125rem;
   height: 3.125rem;
   margin-right: 1rem;
-  border-radius: 4px;
 }
-.blog-content .recent-posts .post-item h3,
-.blog-content .post-categories .post-item h3,
-.blog-content .post-tags .post-item h3 {
+.blog-content .sidebar .post-item h3 {
   font-size: 1rem;
   margin: 0;
 }
-.blog-content .recent-posts .post-item p,
-.blog-content .post-categories .post-item p,
-.blog-content .post-tags .post-item p {
+.blog-content .sidebar .post-item p {
   margin: 0;
   font-size: 0.75rem;
   color: gray;
 }
-.blog-content .post-categories ul {
+.blog-content .sidebar ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.blog-content .post-categories ul li {
+.blog-content .sidebar ul li {
   margin-bottom: 0.5rem;
 }
-.blog-content .post-categories ul li a {
+.blog-content .sidebar ul li a {
   color: #0073e6;
   font-size: 1rem;
 }
-.blog-content .post-tags .tag-cloud-link {
+.blog-content .sidebar .tag-cloud-link {
   display: inline-block;
   margin: 0.25rem;
   padding: 0.5rem 0.75rem;
@@ -5034,29 +5048,48 @@ li {
   border-radius: 4px;
   text-decoration: none;
 }
-.blog-content .post-tags .tag-cloud-link:hover {
+.blog-content .sidebar .tag-cloud-link:hover {
   background-color: #005ab3;
 }
-.blog-content .all-posts .post {
-  margin-bottom: 2rem;
+.blog-content .main-content .posts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.blog-content .main-content .post {
   padding: 1rem;
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, 0.1), 10px, 0;
 }
-.blog-content .all-posts .post img {
+.blog-content .main-content .post img {
   width: 100%;
+<<<<<<< Updated upstream
   height: auto;
+=======
+  aspect-ratio: 555/300;
+  object-fit: cover;
+  object-position: center;
+>>>>>>> Stashed changes
 }
-.blog-content .all-posts .post h2 {
+.blog-content .main-content .post h2 {
   font-size: 1.5rem;
   margin: 1rem 0;
 }
-.blog-content .all-posts .post p {
+.blog-content .main-content .post p {
   font-size: 1rem;
   line-height: 1.5;
 }
-.blog-content .all-posts .pagination {
+.blog-content .main-content .post .post-meta {
+  margin-top: 1rem;
+}
+.blog-content .main-content .post .post-meta .post-categories,
+.blog-content .main-content .post .post-meta .post-tags {
+  margin-bottom: 0.5rem;
+}
+.blog-content .main-content .post .post-meta .post-categories strong,
+.blog-content .main-content .post .post-meta .post-tags strong {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+.blog-content .main-content .pagination {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -5065,7 +5098,7 @@ li {
   gap: 0.5rem;
   margin-top: 2rem;
 }
-.blog-content .all-posts .pagination a {
+.blog-content .main-content .pagination a {
   margin: 0 0.5rem;
   padding: 0.5rem 1rem;
   background-color: #000080;
@@ -5073,10 +5106,10 @@ li {
   border-radius: 4px;
   text-decoration: none;
 }
-.blog-content .all-posts .pagination a:hover {
+.blog-content .main-content .pagination a:hover {
   background-color: #005ab3;
 }
-.blog-content .all-posts .pagination .current {
+.blog-content .main-content .pagination .current {
   background-color: #00004d;
 }
 
@@ -5084,21 +5117,23 @@ li {
   .blog-content {
     grid-template-columns: 1fr;
   }
-  .blog-content .recent-posts h2,
-  .blog-content .post-categories h2,
-  .blog-content .post-tags h2 {
-    text-align: center;
+  .blog-content .sidebar,
+  .blog-content .main-content {
+    padding: 1rem;
   }
-  .blog-content .all-posts .post h2 {
+  .blog-content .main-content .posts-grid {
+    grid-template-columns: 1fr;
+  }
+  .blog-content .main-content .post h2 {
     font-size: 1.25rem;
   }
-  .blog-content .all-posts .post p {
+  .blog-content .main-content .post p {
     font-size: 0.875rem;
   }
-  .blog-content .all-posts .pagination {
+  .blog-content .main-content .pagination {
     flex-direction: column;
   }
-  .blog-content .all-posts .pagination a {
+  .blog-content .main-content .pagination a {
     margin-bottom: 0.5rem;
   }
 }

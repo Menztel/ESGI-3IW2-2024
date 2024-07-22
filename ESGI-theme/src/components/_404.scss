@@ -1,6 +1,53 @@
-.page-404 {
+// Variables
+$primary-color: #000080;
+$secondary-color: #f0f0f0;
+$text-color: #ffffff;
+$link-color: #0073e6;
+
+.error-404 {
+  text-align: center;
+
+  h1 {
+    font-size: rem(48);
+    margin-bottom: rem(16);
+  }
+
+  p {
+    font-size: rem(20);
+    margin-bottom: rem(16);
+  }
+
+  .search-form-404 {
+    margin: rem(32) 0;
+
+    input[type="search"] {
+      padding: rem(8);
+      font-size: rem(16);
+      width: 100%;
+      max-width: rem(400);
+      border: 1px solid $text-color;
+      border-radius: 4px;
+      background-color: $secondary-color;
+      color: $text-color;
+    }
+  }
+
+  .contact-info {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    gap: rem(32);
+
+    .contact-manager,
+    .contact-ceo {
+      h3 {
+        font-size: rem(24);
+        margin-bottom: rem(8);
+      }
+
+      p {
+        font-size: rem(16);
+        margin: rem(4) 0;
+      }
+    }
+  }
 }

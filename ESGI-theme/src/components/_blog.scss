@@ -4,74 +4,129 @@ $secondary-color: #f0f0f0;
 $text-color: #333;
 $link-color: #0073e6;
 $link-hover-color: darken($link-color, 10%);
+
+// Blog Content
 .blog-content {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: rem(32);
-    padding: rem(32);
-  
-    .search-bar {
-      input[type="search"] {
-        width: 100%;
-        padding: rem(8);
-        border: 1px solid $text-color;
-        border-radius: 4px;
-      }
-    }
-  
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: rem(32);
+  padding: rem(32);
+
+  .sidebar {
+    padding: rem(16);
+    .search-bar,
     .recent-posts,
-    .post-categories,
-    .post-tags {
+    .archives,
+    .categories,
+    .tags {
       margin-bottom: rem(32);
-  
+
       h2 {
         font-size: rem(24);
         margin-bottom: rem(16);
       }
-  
-      .post-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: rem(16);
-  
-        img {
-          width: rem(50);
-          height: rem(50);
-          margin-right: rem(16);
-          border-radius: 4px;
-        }
-  
-        h3 {
-          font-size: rem(16);
-          margin: 0;
-        }
-  
-        p {
-          margin: 0;
-          font-size: rem(12);
-          color: gray;
-        }
+    }
+
+    .post-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: rem(16);
+
+      img {
+        width: rem(50);
+        height: rem(50);
+        margin-right: rem(16);
+      }
+
+      h3 {
+        font-size: rem(16);
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+        font-size: rem(12);
+        color: gray;
       }
     }
-  
-    .post-categories ul {
+
+    ul {
       @include resetList;
-  
+
       li {
         margin-bottom: rem(8);
-  
+
         a {
           color: $link-color;
           font-size: rem(16);
         }
       }
     }
-  
-    .post-tags {
-      .tag-cloud-link {
-        display: inline-block;
-        margin: rem(4);
-        padding: rem(8) rem(12);
+
+    .tag-cloud-link {
+      display: inline-block;
+      margin: rem(4);
+      padding: rem(8) rem(12);
+      background-color: $primary-color;
+      color: white;
+      border-radius: 4px;
+      text-decoration: none;
+      
+      &:hover {
+        background-color: $link-hover-color;
+      }
+    }
+  }
+
+  .main-content {
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(32);
+    }
+
+    .post {
+      padding: rem(16);
+
+      img {
+        width: 100%;
+		aspect-ratio: 555 / 300;
+		object-fit: cover;
+		object-position: center;
+      }
+
+      h2 {
+        font-size: rem(24);
+        margin: rem(16) 0;
+      }
+
+      p {
+        font-size: rem(16);
+        line-height: 1.5;
+      }
+
+      .post-meta {
+        margin-top: rem(16);
+
+        .post-categories,
+        .post-tags {
+          margin-bottom: rem(8);
+
+          strong {
+            font-weight: bold;
+            margin-right: rem(8);
+          }
+        }
+      }
+    }
+
+    .pagination {
+      @include flexbox(row, wrap, center, center, rem(8));
+      margin-top: rem(32);
+
+      a {
+        margin: 0 rem(8);
+        padding: rem(8) rem(16);
         background-color: $primary-color;
         color: white;
         border-radius: 4px;
@@ -81,10 +136,31 @@ $link-hover-color: darken($link-color, 10%);
           background-color: $link-hover-color;
         }
       }
+
+      .current {
+        background-color: darken($primary-color, 10%);
+      }
     }
-  
-    .all-posts {
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .blog-content {
+    grid-template-columns: 1fr;
+
+    .sidebar,
+    .main-content {
+      padding: rem(16);
+    }
+
+    .main-content {
+      .posts-grid {
+        grid-template-columns: 1fr;
+      }
+
       .post {
+<<<<<<< Updated upstream
         margin-bottom: rem(32);
         padding: rem(16);
         background-color: white;
@@ -96,72 +172,24 @@ $link-hover-color: darken($link-color, 10%);
           height: auto;
         }
   
+=======
+>>>>>>> Stashed changes
         h2 {
-          font-size: rem(24);
-          margin: rem(16) 0;
+          font-size: rem(20);
         }
-  
+
         p {
-          font-size: rem(16);
-          line-height: 1.5;
+          font-size: rem(14);
         }
       }
-  
+
       .pagination {
-        @include flexbox(row, wrap, center, center, rem(8));
-        margin-top: rem(32);
-  
+        flex-direction: column;
+
         a {
-          margin: 0 rem(8);
-          padding: rem(8) rem(16);
-          background-color: $primary-color;
-          color: white;
-          border-radius: 4px;
-          text-decoration: none;
-          
-          &:hover {
-            background-color: $link-hover-color;
-          }
-        }
-  
-        .current {
-          background-color: darken($primary-color, 10%);
+          margin-bottom: rem(8);
         }
       }
     }
   }
-  
-  // Responsive Design
-  @media (max-width: 768px) {
-    .blog-content {
-      grid-template-columns: 1fr;
-  
-      .recent-posts,
-      .post-categories,
-      .post-tags {
-        h2 {
-          text-align: center;
-        }
-      }
-  
-      .all-posts {
-        .post {
-          h2 {
-            font-size: rem(20);
-          }
-  
-          p {
-            font-size: rem(14);
-          }
-        }
-  
-        .pagination {
-          flex-direction: column;
-  
-          a {
-            margin-bottom: rem(8);
-          }
-        }
-      }
-    }
-  }
+}
