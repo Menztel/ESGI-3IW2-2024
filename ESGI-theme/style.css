@@ -5061,13 +5061,9 @@ li {
 }
 .blog-content .main-content .post img {
   width: 100%;
-<<<<<<< Updated upstream
-  height: auto;
-=======
   aspect-ratio: 555/300;
   object-fit: cover;
   object-position: center;
->>>>>>> Stashed changes
 }
 .blog-content .main-content .post h2 {
   font-size: 1.5rem;
