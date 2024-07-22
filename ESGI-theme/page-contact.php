@@ -3,12 +3,7 @@
 Template Name: Contact
 */
 get_header(); ?>
-<<<<<<< Updated upstream
-<main id="site-content">
-    <h1><?php the_title(); ?>.</h1>
-</main>
-<?php get_footer(); ?>  
-=======
+
 <section class="contact">
     <h1>Contacts.</h1>
     <p>A desire for a big big party or a very select congress? Contact us.</p>
@@ -45,4 +40,3 @@ get_header(); ?>
 </section>
 
 <?php get_footer(); ?>
->>>>>>> Stashed changes
