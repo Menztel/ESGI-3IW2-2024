@@ -11,7 +11,7 @@
     <section class="about-us">
         <div class="about-details">
             <h2>About Us</h2>
-            <p>Specializing in the creation of exceptional events for private and corporate<br> clients, we design, plan and manage every project from conception to<br> execution. </p>
+            <p class="pg">Specializing in the creation of exceptional events for private and corporate<br> clients, we design, plan and manage every project from conception to<br> execution. </p>
         </div>
     </section>
 
@@ -26,21 +26,21 @@
             <article class="who-are">
                 <div class="who-are-details">
                     <h2>Who We Are ?</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse<br> eu convallis elit, at convallis magna.</p>
+                    <p class="pg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse<br> eu convallis elit, at convallis magna.</p>
                 </div>
             </article>
 
             <article class="our-vision">
                 <div class="our-vision-details">
                     <h2>Our vision</h2>
-                    <p> Nullam faucibus interdum massa. Duis eget leo mattis, pulvinar nisi<br> et, consequat lectus. Suspendisse commodo magna orci, id luctus<br> risus porta pharetra. Fusce vehicula aliquet urna non ultricies.</p>
+                    <p class="pg"> Nullam faucibus interdum massa. Duis eget leo mattis, pulvinar nisi<br> et, consequat lectus. Suspendisse commodo magna orci, id luctus<br> risus porta pharetra. Fusce vehicula aliquet urna non ultricies.</p>
                 </div>
             </article>
                 
             <article class="our-mission">
                 <div class="our-mission-details">
                     <h2>Our mission</h2>
-                    <p>Vivamus et viverra neque, ut pharetra ipsum. Aliquam eget<br> consequat libero, quis cursus tortor. Aliquam suscipit eros sit amet<br> velit malesuada dapibus. Fusce in vehicula tellus. Donec quis lorem ut<br> magna tincidunt egestas. </p>
+                    <p class="pg">Vivamus et viverra neque, ut pharetra ipsum. Aliquam eget<br> consequat libero, quis cursus tortor. Aliquam suscipit eros sit amet<br> velit malesuada dapibus. Fusce in vehicula tellus. Donec quis lorem ut<br> magna tincidunt egestas. </p>
                 </div>
             </article>
 
