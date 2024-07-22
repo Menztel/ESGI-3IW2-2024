@@ -1,28 +1,50 @@
-.team-section {
-    text-align: center;
-    padding: 50px 0;
-}
 
-.team-members {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+.our-team{
+    .our-team-title{
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        width: 100%;
+    }
 
-.team-member {
-    width: 200px;
-    margin: 20px;
-    text-align: left;
-}
+    p {
+        padding: 0;
+        margin: 0;
+    }
 
-.team-member-photo img {
-    width: 100%;
-}
+    .team-section {
 
-.team-member h3 {
-    margin: 10px 0;
-}
+        display: flex;
+        flex-direction: column;
 
-.team-member p {
-    margin: 5px 0;
+        padding-top: 5rem;
+        margin-left: 10rem;
+        margin-right: 10rem;
+    }
+    
+    .team-members {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+    }
+    
+    .team-member {
+        width: 200px;
+        
+        text-align: left;
+    }
+    
+    .team-member-photo img {
+        width: 100%;
+    }
+    
+    .team-member h1 {
+        padding: 0;
+        margin: 10px 0;
+    }
+    
+    .team-member p {
+        margin: 5px 0;
+    }
 }
