@@ -9,20 +9,23 @@ get_header(); ?>
     <div class="blog-content">
         <div class="search-bar">
             <?php get_search_form(); ?>
-        </div>
 
-        <div class="recent-posts">
+            <div class="recent-posts">
             <h2>Recent Posts</h2>
             <?php
             $recent_posts = wp_get_recent_posts(array('numberposts' => 4));
             foreach ($recent_posts as $post) :
             ?>
                 <div class="post-item">
-                    <a href="<?php echo get_permalink($post['ID']); ?>">
+                    <div class="post-item-image">
                         <?php echo get_the_post_thumbnail($post['ID'], 'thumbnail'); ?>
-                        <h3><?php echo $post['post_title']; ?></h3>
-                    </a>
-                    <p><?php echo get_the_date('d M, Y', $post['ID']); ?></p>
+                    </div>
+                    <div class="post-item-details">
+                        <a href="<?php echo get_permalink($post['ID']); ?>">
+                            <h3><?php echo $post['post_title']; ?></h3>
+                            <p><?php echo get_the_date('d M, Y', $post['ID']); ?></p>
+                        </a>
+                    </div>
                 </div>
             <?php endforeach; wp_reset_query(); ?>
         </div>
@@ -38,6 +41,9 @@ get_header(); ?>
             <h2>Tags</h2>
             <?php wp_tag_cloud(); ?>
         </div>
+        </div>
+
+       
 
         <div class="all-posts">
             <?php if (have_posts()) : ?>

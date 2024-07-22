@@ -5053,7 +5053,6 @@ li {
 .blog-content .all-posts .post img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
 }
 .blog-content .all-posts .post h2 {
   font-size: 1.5rem;
@@ -5132,7 +5131,7 @@ main h2 {
   font-weight: 600;
   line-height: normal;
 }
-main p {
+main .pg {
   color: #8A8A8A;
   font-size: 1.25rem;
   line-height: 2.875rem;
